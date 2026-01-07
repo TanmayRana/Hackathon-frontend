@@ -3,14 +3,13 @@ import { SearchForm } from "./_components/search-form";
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
   TableRow,
 } from "../components/ui/table";
 import { Badge } from "../components/ui/badge";
-import { MoreHorizontal, Edit, Trash2, Upload, X } from "lucide-react";
+import { Edit, Trash2, Upload, X } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -18,7 +17,6 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "../components/ui/dialog";
 import { Input } from "../components/ui/input";
 import { Label } from "../components/ui/label";
@@ -65,8 +63,6 @@ export default function Category() {
     return (
       state.categories || { categories: [], isLoading: false, error: null }
     );
-
-
   });
 
   console.log(categories);
@@ -256,7 +252,9 @@ export default function Category() {
                       </TableCell>
                       <TableCell>
                         <div>
-                          <div className="font-medium">{category.categoryName}</div>
+                          <div className="font-medium">
+                            {category.categoryName}
+                          </div>
                         </div>
                       </TableCell>
                       <TableCell className="hidden md:table-cell text-sm">
@@ -272,7 +270,9 @@ export default function Category() {
                       <TableCell>
                         <Badge
                           variant={
-                            category.status === "active" ? "default" : "secondary"
+                            category.status === "active"
+                              ? "default"
+                              : "secondary"
                           }
                           className={
                             category.status === "active"
@@ -373,10 +373,11 @@ export default function Category() {
                   </div>
                 ) : (
                   <div
-                    className={`text-center p-8 border-2 border-dashed rounded-lg ${isDragging
-                      ? "border-blue-500 bg-blue-50"
-                      : "border-gray-300"
-                      }`}
+                    className={`text-center p-8 border-2 border-dashed rounded-lg ${
+                      isDragging
+                        ? "border-blue-500 bg-blue-50"
+                        : "border-gray-300"
+                    }`}
                     onDragOver={handleDragOver}
                     onDragLeave={handleDragLeave}
                     onDrop={handleDrop}

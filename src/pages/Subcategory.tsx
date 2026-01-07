@@ -1,8 +1,7 @@
 import { useState, useRef, useEffect } from "react";
-import { PlusCircle, Search, Edit, Trash2, X, Upload } from "lucide-react";
+import { Edit, Trash2, X, Upload } from "lucide-react";
 import { Input } from "../components/ui/input";
 import { Button } from "../components/ui/button";
-import { Checkbox } from "../components/ui/checkbox";
 import { Label } from "../components/ui/label";
 import { Switch } from "../components/ui/switch";
 import {
@@ -21,7 +20,6 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "../components/ui/dialog";
 import {
   AlertDialog,
@@ -83,7 +81,6 @@ export default function Subcategory() {
   const { categories } = useAppSelector((state: any) => state.categories);
 
   console.log(subcategories);
-
 
   useEffect(() => {
     dispatch(getAllSubCategories({}));
@@ -421,10 +418,11 @@ export default function Subcategory() {
                   </div>
                 ) : (
                   <div
-                    className={`text-center p-8 border-2 border-dashed rounded-lg ${isDragging
-                      ? "border-blue-500 bg-blue-50"
-                      : "border-gray-300"
-                      }`}
+                    className={`text-center p-8 border-2 border-dashed rounded-lg ${
+                      isDragging
+                        ? "border-blue-500 bg-blue-50"
+                        : "border-gray-300"
+                    }`}
                     onDragOver={handleDragOver}
                     onDragLeave={handleDragLeave}
                     onDrop={handleDrop}

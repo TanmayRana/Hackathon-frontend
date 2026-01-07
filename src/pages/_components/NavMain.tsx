@@ -1,7 +1,6 @@
 import {
   ChevronRight,
   Folder,
-  MoreHorizontal,
   Home,
   Package,
   Grid3x3,
@@ -10,7 +9,6 @@ import {
 
 import {
   SidebarGroup,
-  SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuAction,
   SidebarMenuButton,
@@ -41,7 +39,6 @@ export function NavMain({
 
   return (
     <SidebarGroup className="group-data-[collapsible=icon]:hidden">
-
       <SidebarMenu>
         {projects.map((item) => {
           const Icon = getIconForUrl(item.url);
@@ -51,10 +48,11 @@ export function NavMain({
             <SidebarMenuItem key={item.name}>
               <SidebarMenuButton
                 asChild
-                className={`py-6 px-4 ${isActive
-                  ? "bg-purple-100 text-purple-700 border-l-4 border-purple-600"
-                  : "text-gray-700 hover:bg-gray-100 hover:text-gray-900 "
-                  }`}
+                className={`py-6 px-4 ${
+                  isActive
+                    ? "bg-purple-100 text-purple-700 border-l-4 border-purple-600"
+                    : "text-gray-700 hover:bg-gray-100 hover:text-gray-900 "
+                }`}
               >
                 <Link to={item.url} className="flex items-center ">
                   <Icon className="h-4 w-4" />

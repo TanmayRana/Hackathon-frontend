@@ -1,30 +1,9 @@
 "use client";
 
 import * as React from "react";
-import {
-  BookOpen,
-  Bot,
-  CircleDot,
-  Command,
-  Frame,
-  Home,
-  LifeBuoy,
-  Map,
-  PieChart,
-  Send,
-  Settings2,
-  SquareTerminal,
-} from "lucide-react";
+import { CircleDot, Home, Map } from "lucide-react";
 
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarFooter,
-  SidebarHeader,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-} from "../../components/ui/sidebar";
+import { Sidebar, SidebarContent } from "../../components/ui/sidebar";
 import { NavMain } from "./NavMain";
 
 const data = {

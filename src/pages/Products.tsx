@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { PlusCircle, Search, Edit, Trash2, X, Upload } from "lucide-react";
+import { Edit, Trash2, X, Upload } from "lucide-react";
 import { Input } from "../components/ui/input";
 import { Button } from "../components/ui/button";
 import { Label } from "../components/ui/label";
@@ -286,7 +286,9 @@ export default function Products() {
                       <TableCell>
                         <Badge
                           variant={
-                            product.status === "active" ? "default" : "secondary"
+                            product.status === "active"
+                              ? "default"
+                              : "secondary"
                           }
                           className={
                             product.status === "active"
@@ -428,10 +430,11 @@ export default function Products() {
                   </div>
                 ) : (
                   <div
-                    className={`text-center p-8 border-2 border-dashed rounded-lg ${isDragging
-                      ? "border-blue-500 bg-blue-50"
-                      : "border-gray-300"
-                      }`}
+                    className={`text-center p-8 border-2 border-dashed rounded-lg ${
+                      isDragging
+                        ? "border-blue-500 bg-blue-50"
+                        : "border-gray-300"
+                    }`}
                     onDragOver={handleDragOver}
                     onDragLeave={handleDragLeave}
                     onDrop={handleDrop}
